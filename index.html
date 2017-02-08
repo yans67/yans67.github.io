@@ -151,6 +151,391 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/08/test/">test</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/08/test/" class="archive-article-date">
+  	<time datetime="2017-02-08T01:40:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="assets/logo3.png" alt=""></p>
+<h1 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h1><h2 id="文档修订控制"><a href="#文档修订控制" class="headerlink" title="文档修订控制"></a>文档修订控制</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">修改时间</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">版本</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2016.5.3</td>
+<td style="text-align:center">杨楚璇</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:left">创建文档</td>
+</tr>
+</tbody>
+</table>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#1-介绍"><strong>1 介绍</strong></a></p>
+<ul>
+<li><a href="#11-target的理解">1.1 Target的理解</a></li>
+<li><a href="#12-target的作用">1.2 Target的作用</a></li>
+</ul>
+<p><a href="#2-多target的使用步骤"><strong>2 多Target的使用步骤</strong></a></p>
+<ul>
+<li><a href="#21-创建">2.1 创建</a></li>
+<li><a href="#22-改名">2.2 改名</a></li>
+<li><a href="#23-关联info文件">2.3 关联Info文件</a></li>
+</ul>
+<p><a href="#3-多target的考虑问题"><strong>3 多Target的考虑问题</strong></a></p>
+<ul>
+<li><a href="#31-项目基础配置不同">3.1 项目基础配置不同</a></li>
+<li><a href="#32-app图标不同">3.2 APP图标不同</a></li>
+<li><a href="#33-启动界面不同">3.3 启动界面不同</a></li>
+<li><a href="#34-业务逻辑需求不同">3.4 业务逻辑需求不同</a><ul>
+<li><a href="#341-类文件不同">3.4.1 类文件不同</a> </li>
+<li><a href="#342-图片不同">3.4.2 图片不同</a> </li>
+</ul>
+</li>
+</ul>
+<p><a href="#4-多target的优缺点"><strong>4 多Target的优缺点</strong></a></p>
+<ul>
+<li><a href="#41-优点">4.1 优点</a></li>
+<li><a href="#42-缺点">4.2 缺点</a></li>
+</ul>
+<p><a href="#补充说明"><strong>补充说明</strong></a></p>
+<ul>
+<li><a href="#编译器到底对我们的代码做了什么">编译器到底对我们的代码做了什么</a></li>
+</ul>
+<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a><a id="#1-介绍"></a>1 介绍</h2><h3 id="1-1-Target的理解"><a href="#1-1-Target的理解" class="headerlink" title="1.1 Target的理解"></a><a id="11-target的理解"></a>1.1 Target的理解</h3><ul>
+<li>在Project 中，可以通过 Target 来指定一些指令、设置来生成Product（也就是说，Target就是生成对应Product的相关设置）。这些设置包含着 Info.plist ， Build Setting ，Recource File等。</li>
+<li>Project 可以通过多个不同设置的 Target 生成不同的 Product，一个Target 对应生成一个 Product。</li>
+<li>Project 编译时可以设置两个编译版本，Debug、Release。所以Target里面会分Debug版本设置、Release版本设置。</li>
+</ul>
+<h3 id="1-2-Target的作用"><a href="#1-2-Target的作用" class="headerlink" title="1.2 Target的作用"></a><a id="12-target的作用"></a>1.2 Target的作用</h3><ul>
+<li>单Target创建Project时，Xcode默认生成一个Target。</li>
+<li>多Target <ul>
+<li>同个项目，运用在多现场，配置不同；</li>
+<li>多个相似的APP，一些小模块不同；</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-多Target的使用步骤"><a href="#2-多Target的使用步骤" class="headerlink" title="2 多Target的使用步骤"></a><a id="2-多target的使用步骤"></a>2 多Target的使用步骤</h2><h3 id="2-1-创建"><a href="#2-1-创建" class="headerlink" title="2.1 创建"></a><a id="21-创建"></a>2.1 创建</h3><p>如何创建多个Target？<br>在使用Xcode创建一个新工程时，Xcode会默认在这个工程里面帮我们创建一个Target，并生成该Target关联的Info.plist文件，如下图。</p>
+<p><img src="assets/1.png" alt=""></p>
+<p>创建新Target两种方式：</p>
+<ul>
+<li>复制原先的Target</li>
+</ul>
+<p>在原来Target上，点击右键，选择 Duplicate，便可复制生成新Target，并生成关联的Info.plist。如图。（本文举例采用这一种复制生成新Target）<br><img src="assets/6666.png" alt=""></p>
+<p><img src="assets/2.png" alt=""></p>
+<ul>
+<li>重新创建新的Target</li>
+</ul>
+<p>点击Xcode –&gt; File –&gt; New –&gt; Target，创建新的Target。如图。</p>
+<p><img src="assets/123.png" alt=""></p>
+<h3 id="2-2-改名"><a href="#2-2-改名" class="headerlink" title="2.2 改名"></a><a id="22-改名"></a>2.2 改名</h3><p>由于复制生成的Target的名字不好区分识别，所以我们可以改动给Target重新命名。</p>
+<p>如图，通过双击红框位置进行命名。</p>
+<p>选择工程Target进行修改；</p>
+<p><img src="assets/2.png" alt=""></p>
+<p>选择xcode左上角，选择Target处，Manage Schemes，进行修改；</p>
+<p><img src="assets/3.png" alt=""></p>
+<h3 id="2-3-关联Info文件"><a href="#2-3-关联Info文件" class="headerlink" title="2.3 关联Info文件"></a><a id="23-关联info文件"></a>2.3 关联Info文件</h3><p>由于重新对Info.plist文件命名，会导致Target无法识别对应的Info.plist文件，所以在改名后，我们需要重新关联Info文件。</p>
+<p>选择Target后，在 General –&gt; Identity，点击重新选择关联Info文件。</p>
+<p><img src="assets/4.png" alt=""></p>
+<h2 id="3-多Target的考虑问题"><a href="#3-多Target的考虑问题" class="headerlink" title="3 多Target的考虑问题"></a><a id="3-多target的考虑问题"></a>3 多Target的考虑问题</h2><p>考虑过使用多Target可以解决多现场等问题，但不同的Target之间配置、文件可能都不同，具体如何进行详细操作如下。</p>
+<h3 id="3-1-项目基础配置不同"><a href="#3-1-项目基础配置不同" class="headerlink" title="3.1 项目基础配置不同"></a><a id="31-项目基础配置不同"></a>3.1 项目基础配置不同</h3><p>项目的基础配置不同，如不同现场版本号不同、项目名称不同。这些基础配置，可以通过Product对应Target的Info.plist文件修改。</p>
+<h3 id="3-2-APP图标不同"><a href="#3-2-APP图标不同" class="headerlink" title="3.2 APP图标不同"></a><a id="32-app图标不同"></a>3.2 APP图标不同</h3><p>不同现场APP图标不同，这里我们不用系统默认创建的 xcassets 文件，在各自的 Target 设置app icon处，重新创建 xcassets 文件。</p>
+<p>考虑：</p>
+<ul>
+<li>系统默认的 xcassets 文件可以放置共同类的图片；</li>
+<li>满足不同 Product 对应 Icon 图片不同；</li>
+<li>新建的 xcassets 文件，存放专属这个 Target 的图片；</li>
+</ul>
+<p>取消使用系统默认的 xcassets 文件</p>
+<p><img src="assets/10.png" alt=""></p>
+<p>重新创建 xcassets 文件</p>
+<p><img src="assets/111.png" alt=""></p>
+<h3 id="3-3-启动界面不同"><a href="#3-3-启动界面不同" class="headerlink" title="3.3 启动界面不同"></a><a id="33-启动界面不同"></a>3.3 启动界面不同</h3><p>使用系统默认生成的 launchScreen.storyboard 来设置启动界面，可这个 launchScreen.storyboard 没有帮我们关联所有的Target。需要自己设置这个 launchScreen.storyboard 的Target MemberShip。</p>
+<p>点击 launchScreen.storyboard，查看Xcode右边，可看到一个Target MemberShip 的属性，选择关联哪个Target。</p>
+<p><img src="assets/63.png" alt=""></p>
+<p>准备多张相同命名（如 launchImage.png）的启动界面图，分别添加到各自 Target 的 xcassets 文件中。</p>
+<p>launchScreen.storyboard 的启动图片，选择这些启动图的名称（launchImage.png）即可。</p>
+<h3 id="3-4-业务逻辑需求不同"><a href="#3-4-业务逻辑需求不同" class="headerlink" title="3.4 业务逻辑需求不同"></a><a id="34-业务逻辑需求不同"></a>3.4 业务逻辑需求不同</h3><p>当多个现场的业务逻辑或者需求不同，则对应的Target实现的功能不同。这时我们分为两种情况，一种是不同Target需要不同的类文件实现不同的功能，一种是不同Target对应的图片资源不同。</p>
+<h4 id="3-4-1-类文件不同"><a href="#3-4-1-类文件不同" class="headerlink" title="3.4.1 类文件不同"></a><a id="341-类文件不同"></a>3.4.1 类文件不同</h4><p>类文件不同，例如A现场需要Person这个类来实现这个功能，而B现场需要Animal这个类来实现这个功能。</p>
+<p>那么我们的做法是，创建对应的Person文件、Animal文件，让Person文件关联Target A（A现场），Animal文件关联Target B（B现场）。这里，我们称Person这个类是Target A 的专属类文件。</p>
+<p>关联对应 Target 有两种情况，一种是新建文件时关联，一种是已建的文件设置关联。</p>
+<ul>
+<li>新建文件关联：</li>
+</ul>
+<p><img src="assets/5.png" alt=""></p>
+<ul>
+<li>已建文件关联：</li>
+</ul>
+<p><img src="assets/16.png" alt=""></p>
+<p>在公共类调用不同Target对应专属类文件时，如何告诉编译器对应Target加载对应的专属类呢？</p>
+<p>答案是：通过每个Target的预编译宏来区别。</p>
+<p>首先，为每个Target设置本身的预编译宏。</p>
+<p><img src="assets/Marco.png" alt=""></p>
+<p>在公共类使用预编译宏区分Target。</p>
+<p><img src="assets/27.png" alt=""></p>
+<p><img src="assets/18.png" alt=""></p>
+<p>到这里，我们提出两个问题。</p>
+<ul>
+<li><p>问：Target MemberShip的作用</p>
+<p>   答：一个文件属于哪一个Target。</p>
+<p>  例如，当我们要在某个target里面使用abc.png这张图片，不过没有将这张图片添加到    Target MemberShip中，就不能使用这张图片。</p>
+  <figure class="highlight plain"><figcaption><span>*image = [[UIImageView alloc]initWithImage:[UIImage imageWithName:@"abc.png"]];```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	此时image会返回nil，因为找不到abc.png这张图片，虽然有存在工程里面，不过没有添加	到Target 的MemberShip里面，所以Target是找不到的。</div><div class="line"></div><div class="line">- 问：.m文件、XIB 可以添加为target menberShip，为何.h文件不需要添加呢?</div><div class="line"></div><div class="line">	答：因为可以关联target的文件需要满足两个条件：</div><div class="line"></div><div class="line">    * 可执行（可编译）文件，例如.m 和 库</div><div class="line">    * 被包括在包里面的文件，例如图片、XIB</div><div class="line">    </div><div class="line">    而.h只有在编译时会使用，而在运行时是不需要的。（参考补充）</div><div class="line"></div><div class="line"></div><div class="line">#### &lt;a id=&quot;342-图片不同&quot;&gt;&lt;/a&gt;3.4.2 图片不同</div><div class="line">例如，添加两张命名都为image.png的图片，到对应的Target MemberShip中，使用UIImageView加载image.png图片代码。</div><div class="line"></div><div class="line">```UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageWithName:@&quot;image.png&quot;]];</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此时，编译不同的Target，该ImageView会根据Target不同，加载不同的图片来显示。</p>
+<h2 id="4-多Target的优缺点"><a href="#4-多Target的优缺点" class="headerlink" title="4 多Target的优缺点"></a><a id="4-多target的优缺点"></a>4 多Target的优缺点</h2><h3 id="4-1-优点"><a href="#4-1-优点" class="headerlink" title="4.1 优点"></a><a id="41-优点"></a>4.1 优点</h3><ul>
+<li>Target 之间可共用一些底层类、基础类，不必管理多个工程；</li>
+<li>Target 之间可有自己的资源、配置，避免多个现场下切换现场的资源、配置更改；</li>
+</ul>
+<h3 id="4-2-缺点"><a href="#4-2-缺点" class="headerlink" title="4.2 缺点"></a><a id="42-缺点"></a>4.2 缺点</h3><ul>
+<li>只适合于开发相似度大的APP、同个项目多现场；</li>
+<li>在设置Target MemberShip 时，文件对应Target要分清，容易造成混乱；</li>
+</ul>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a><a id="补充说明"></a>补充说明</h2><h3 id="编译器到底对我们的代码做了什么"><a href="#编译器到底对我们的代码做了什么" class="headerlink" title="编译器到底对我们的代码做了什么"></a><a id="编译器到底对我们的代码做了什么"></a>编译器到底对我们的代码做了什么</h3><p>我们首先得明确编译过程主要包含一些什么步骤，具体步骤如下图</p>
+<p><img src="assets/19.png" alt=""></p>
+<ul>
+<li><p>预处理阶段，对#define、#include、#import的展开，处理.pch文件。</p>
+<p>  将#后面的语句换成导入的文件。并且生成<code>中间文件</code></p>
+<p>  在 ViewController 这个类中，.h文件包含了 UIKit.h 和 CoreLocation.h 这些文件，.m文件中包含了.h文件和.m文件的全部代码。在预处理阶段，.m会生成中间文件，所谓中间文件就是上述这些文件的集合。</p>
+</li>
+</ul>
+<pre><code>所以.h头文件不需要添加入Target的MemberShip中，因为在.m的实现文件中，会将.h文件包含到.m里面生成中间文件。
+</code></pre><ul>
+<li><p>编译阶段，生成汇编语言</p>
+</li>
+<li><p>汇编阶段，根据汇编语言最终生成<code>目标对象文件</code>即.o文件。</p>
+</li>
+<li><p>链接器链接阶段，将目标对象文件.o文件(在.o文件找symbol符号)与其他库链接在一起，生成<code>可执行文件</code>。</p>
+<ol>
+<li>动态链接</li>
+<li>静态链接 </li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>地址：广州市天河区长湴白沙水路89号长湴创意园A栋</p>
+<p>邮编：510000</p>
+<p>公司网址：www.minstone.com.cn</p>
+<p>Copyright &copy; 2016年 Minstone. All rights reserved.</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/08/test/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-test副本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/08/test副本/">test</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/08/test副本/" class="archive-article-date">
+  	<time datetime="2017-02-08T01:40:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="assets/logo.png" alt=""></p>
+<h1 id="React-Native简单应用"><a href="#React-Native简单应用" class="headerlink" title="React Native简单应用"></a>React Native简单应用</h1><h2 id="文档修订控制"><a href="#文档修订控制" class="headerlink" title="文档修订控制"></a>文档修订控制</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">修改时间</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">版本</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2016.8.8</td>
+<td style="text-align:center">黄炎桂</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:left">创建文档</td>
+</tr>
+</tbody>
+</table>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#1-引言"><strong>1 引言</strong></a></p>
+<ul>
+<li><a href="#11-培训目的">1.1 培训目的</a></li>
+<li><a href="#12-参考资料">1.2 参考资料</a></li>
+<li><a href="#13-术语和缩写词">1.3 术语和缩写词</a></li>
+</ul>
+<p><a href="#2-关于reactnative"><strong>2 关于reactnative</strong></a></p>
+<ul>
+<li><a href="#21-简介">2.1 简介</a></li>
+<li><a href="#22-配置开发环境">2.2 配置开发环境</a></li>
+<li><a href="#23-创建第一个项目">2.3 创建第一个项目</a></li>
+<li><a href="#24-运行项目">2.4 运行项目</a></li>
+</ul>
+<h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a><a id="1-引言"></a>1 引言</h2><h3 id="1-1-培训目的"><a href="#1-1-培训目的" class="headerlink" title="1.1 培训目的"></a><a id="11-培训目的"></a>1.1 培训目的</h3><p>让小组成员了解 React Native 的基本使用，探讨 React Native 的使用场景。</p>
+<h3 id="1-2-参考资料"><a href="#1-2-参考资料" class="headerlink" title="1.2 参考资料"></a><a id="12-参考资料"></a>1.2 参考资料</h3><p><a href="http://reactnative.cn/" target="_blank" rel="external">官方文档</a></p>
+<h3 id="1-3-术语和缩写词"><a href="#1-3-术语和缩写词" class="headerlink" title="1.3 术语和缩写词"></a><a id="13-术语和缩写词"></a>1.3 术语和缩写词</h3><p>ReactNative:RN</p>
+<h2 id="2-关于reactnative"><a href="#2-关于reactnative" class="headerlink" title="2 关于reactnative"></a><a id="2-关于reactnative"></a>2 关于reactnative</h2><p>React Native 是有 <code>Facebook</code> 在15年开源的，基于 <code>React</code> 的跨平台框架。开发者可以使用 JS 和 React 来开发跨平台应用。</p>
+<blockquote>
+<p>React 则是 FB 的一个前端框架，在13年开源。</p>
+</blockquote>
+<h3 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1 简介"></a><a id="21-简介"></a>2.1 简介</h3><p>React Native 刚开始提出来只支持 iOS，应用了<code>Visual Dom</code> 和 <code>Runtime</code> 对 iOS 底层进行包装，所以使用的时候得学习 React Native 暴露在最顶层的接口，2016年开始 Android 版本逐渐完善。</p>
+<blockquote>
+<p>目前 RN 只支持 <code>iOS7</code> 和 <code>Android4.1</code> 以上。</p>
+<p>功能、交互效果简单，不需要原生系统支持，可考虑。较复杂也可以考虑 <code>RN + 原生</code></p>
+</blockquote>
+<h3 id="2-2-配置开发环境"><a href="#2-2-配置开发环境" class="headerlink" title="2.2 配置开发环境"></a><a id="22-配置开发环境"></a>2.2 配置开发环境</h3><ol>
+<li><p>先安装 <code>Homebrew</code>,此为 Mac 上包管理器，可以通过该软件获取并安装很多软件。（可以在终端输入 <code>brew --help</code> 来判断电脑是否有该环境）</p>
+<p> 终端输入一下命令即可安装 <code>homebrew</code> ：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <code>npm</code> 和 <code>Node.js</code></p>
+<blockquote>
+<p>npm 就是 node.js 的包管理工具，相当于 iOS 的 cocoapod，Java 的 Maven。<br>可以直接安装4.0版本+的 Node.js，这样 Node 会集成 npm。</p>
+</blockquote>
+</li>
+<li><p>安装 watchman 和 flow</p>
+<ul>
+<li><p>watchman 是用来bug 文件和文件变化，并且可以触发指定操作。（可不装）<br>安装命令为：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
+</li>
+<li><p>flow 是 JavaScript 的静态分析器，方便找出代码的类型错误。（可不装，建议装）安装命令为：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install flow</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>安装 React Native</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g react-native-cli</div></pre></td></tr></table></figure>
+<p> 如下图所示：</p>
+<p> <img src="assets/installrn.png" alt=""></p>
+</li>
+</ol>
+<h3 id="2-3-创建第一个项目"><a href="#2-3-创建第一个项目" class="headerlink" title="2.3 创建第一个项目"></a><a id="23-创建第一个项目"></a>2.3 创建第一个项目</h3><ul>
+<li><p>RN 创建项目时会从 <code>npm仓库</code> 中下载项目模板，由于被墙，所以可以更改成国内镜像。输入下面命令行：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</div><div class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/list</div></pre></td></tr></table></figure>
+</li>
+<li><p>cd 到项目路径，然后在终端中输入：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native init RNDemo</div></pre></td></tr></table></figure>
+<p>  等待下载后，就能在当前目录看到我们创建的项目，如下图所示：</p>
+<p>  <img src="assets/installdemo.png" alt=""></p>
+</li>
+<li><p>项目的主要结构如图所示：</p>
+<p>  <img src="assets/dir.png" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p>iOS项目可以用 <code>Xcode</code> 打开，Android 项目则用 <code>Android Studio</code>。</p>
+</blockquote>
+<ul>
+<li><p>用 Xcode 打开 iOS 项目，运行可以看到 RN 的服务器在终端自动启动(项目启动期间不能关掉)，模拟器显示 RN 的欢迎界面。如图所示：</p>
+<p>  <img src="assets/iossuccess.png" alt=""></p>
+</li>
+<li><p>用 AndroidStudio 打开 Android 项目，运行发现效果跟 iOS 一样。</p>
+</li>
+<li><p>RN 目录结构中，index.ios.js 和 index.android.js 分别表示 iOS 项目和 Android 项目的首页（类似 javaweb 项目中的 index，默认生成）</p>
+</li>
+<li><p>接下来我们来调试我们的 RN 项目，打开 webstone，来到我们的 RNDemo 项目，webstone 会自动扫描项目。如图所示：</p>
+<p>  <img src="assets/project.png" alt=""><br>  <img src="assets/into.png" alt=""></p>
+</li>
+</ul>
+<h3 id="2-4-运行项目"><a href="#2-4-运行项目" class="headerlink" title="2.4 运行项目"></a><a id="24-运行项目"></a>2.4 运行项目</h3><ul>
+<li><p>分别利用 Xcode 和 Android打开我们的项目，然后运行，在 Xcode 的模拟器和 Android 的模拟器上可以看到运行界面如下图所示：</p>
+<p>  <img src="assets/iosdemo.png" alt=""><br>  <img src="assets/androiddemo.png" alt=""></p>
+</li>
+<li><p>举 iOS 项目为例子，进入 iOS 项目，查看 <code>AppDelegate.m</code> 头文件，可以看到代码如下所示，<code>RCTRootView</code>为 <code>RN</code> 封装好的一个视图控件，从代码中可以知道，rootView 主要是加载 <code>index.ios</code> 这个页面。</p>
+<p>  <img src="assets/appdelegate.png" alt=""></p>
+</li>
+<li><p>进入到 <code>RN</code> 的 <code>RNDemo</code> 项目的 <code>index.ios.js</code> 文件，可以看到内容如下所示，这个 js 的内容就是用 jsx 来生成我们的控件。相应注释如图所示：</p>
+<p>  <img src="assets/ioscode.png" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p>地址：广州市天河区长湴白沙水路89号长湴创意园A栋</p>
+<p>邮编：510000</p>
+<p>公司网址：www.minstone.com.cn</p>
+<p>Copyright &copy; 2016年 Minstone. All rights reserved.</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/08/test副本/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
