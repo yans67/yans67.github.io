@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -121,7 +121,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-cff3a72a34d7b56d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-9421a55a5721c22d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-1ce3fb03a059fb39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-09T14:31:26.000Z">
+<meta property="og:updated_time" content="2017-02-09T16:16:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PlistBuddy 简单使用">
 <meta name="twitter:description" content="plist 是 OSX 中非常普遍的一种文件格式，类似 XML，通过键值对的方式来进行一些配置。而 PlistBuddy 则是 OSX 系统自带的专门解析 plist 的小工具（Buddy 为好朋友，伙伴的意思。从名字不难看出 PlistBuddy 对 plist 文件的友好支持）。
@@ -135,7 +135,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
@@ -365,24 +365,18 @@
       
         <p>plist 是 OSX 中非常普遍的一种文件格式，类似 XML，通过键值对的方式来进行一些配置。而 PlistBuddy 则是 OSX 系统自带的专门解析 plist 的小工具（Buddy 为好朋友，伙伴的意思。从名字不难看出 PlistBuddy 对 plist 文件的友好支持）。</p>
 <p>由于 PlistBuddy 并不在 OSX 默认的 Path 里，所以我们得通过绝对路径来引用这个工具：</p>
-<p>例如查看帮助，我们需要在终端上输入以下命令：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy --help</div></pre></td></tr></table></figure>
-<p>下面我们来看看PlistBuddy的简单使用</p>
-<p>###打印：</p>
-<p>初始化一个 info.plist 文件：</p>
+<p>例如查看帮助，我们需要在终端上输入以下命令：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy --help</div></pre></td></tr></table></figure></p>
+<p>下面我们来看看 PlistBuddy 的简单使用</p>
+<h3 id="打印："><a href="#打印：" class="headerlink" title="打印："></a>打印：</h3><p>初始化一个 info.plist 文件：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1760370-6c0ea39c931bb149.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="初始化info.plist"></p>
-<p>打印info.plist文件：</p>
+<p>打印 info.plist 文件：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy -c <span class="string">"print"</span> info.plist</div></pre></td></tr></table></figure>
-<p>在终端输入上述命令后如下所示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760370-e80e90fa064435cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><p>添加普通字段:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Version string 1.0'</span> info.plist</div></pre></td></tr></table></figure>
+<p>在终端输入上述命令后如下所示：<br><img src="http://upload-images.jianshu.io/upload_images/1760370-e80e90fa064435cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><p>添加普通字段:<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Version string 1.0'</span> info.plist</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1760370-44d77fb02b78bb82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>添加数组字段，分两步走，注意<code>key之间用 : 隔开，且不能有空格</code>：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先添加key值</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Application array'</span> info.plist</div><div class="line"><span class="comment"># 添加value值</span></div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app1'</span> info.plist</div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app2'</span> info.plist</div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app3'</span> info.plist</div></pre></td></tr></table></figure>
+<p>添加数组字段，分两步走，注意 <code>key之间用 : 隔开，且不能有空格</code> ：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先添加key值</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Application array'</span> info.plist</div><div class="line"><span class="comment"># 添加value值</span></div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app1'</span> info.plist</div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app2'</span> info.plist</div><div class="line">yans67deMacBook-<span class="symbol">Pro:</span>needfiles huangyg$ /usr/libexec/PlistBuddy -c <span class="string">'Add :Application: string app3'</span> info.plist</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1760370-59c60d6f57b54a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>添加字典字段，分两步走：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先添加key值</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person dict'</span> info.plist</div><div class="line"><span class="comment"># 添加value值,</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Age string secret'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:Name string yans67'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:sex string boy'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:weight string 65'</span> info.plist</div></pre></td></tr></table></figure>
+<p>添加字典字段，分两步走：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先添加key值</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person dict'</span> info.plist</div><div class="line"><span class="comment"># 添加value值,</span></div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Age string secret'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:Name string yans67'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:sex string boy'</span> info.plist</div><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Add :Person:weight string 65'</span> info.plist</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1760370-329d4e8641b66aca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>打印字段相应的值：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/libexec/PlistBuddy -c <span class="string">'Print :Person'</span> info.plist</div></pre></td></tr></table></figure>
@@ -566,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">1.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">4.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并"><span class="nav-number">5.</span> <span class="nav-text">合并</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#打印："><span class="nav-number">1.</span> <span class="nav-text">打印：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">2.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">5.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并"><span class="nav-number">6.</span> <span class="nav-text">合并</span></a></li></ol></div>
             
 
           </div>
@@ -656,13 +650,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
