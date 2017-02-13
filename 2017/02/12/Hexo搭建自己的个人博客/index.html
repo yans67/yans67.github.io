@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-9e150190a0093a87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-7a82f771fc3d2198.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-b2d1d616dcef1b7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-13T16:37:36.000Z">
+<meta property="og:updated_time" content="2017-02-13T16:39:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + Github Page 搭建自己的个人博客">
 <meta name="twitter:description" content="在使用 Hexo 搭建博客前，需要安装相关环境。
@@ -371,14 +371,16 @@
 <p>需要安装的环境有：HomeBrew、Node、Hexo 以及运行博客的其他 npm 包。</p>
 <p>如果系统已经安装 Node 环境，可以直接跳过以下步骤，直接安装 Hexo 环境。判断是否安装 Node 环境可以使用如下命令：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure>
-<h4 id="安装-HomeBrew"><a href="#安装-HomeBrew" class="headerlink" title="安装 HomeBrew"></a>安装 HomeBrew</h4><p>打开终端，在窗口中输入：<code>brew -v</code>，如果没有安装，则输入 HomeBrew 的安装命令：<br><a id="more"></a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
+<h4 id="安装-HomeBrew"><a href="#安装-HomeBrew" class="headerlink" title="安装 HomeBrew"></a>安装 HomeBrew<a id="more"></a></h4><p>打开终端，在窗口中输入：<code>brew -v</code>，如果没有安装，则输入 HomeBrew 的安装命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
 <p>HomeBrew 环境的安装可能需要一点时间。</p>
 <h4 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h4><p>brew 环境安装后就可以安装 Node 环境，在终端输入：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
 <p>由于 Node 的仓库是在外国，为了提高下载速度，可以替换为国内的镜像源，在终端输入一下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
 <p>配置后可通过下面方式来验证是否替换成功：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config get registry</div></pre></td></tr></table></figure></p>
 <p>返回 taobao 镜像的仓库则说明配置成功。</p>
-<h3 id="PS-另一种方式安装-Node-环境"><a href="#PS-另一种方式安装-Node-环境" class="headerlink" title="PS.另一种方式安装 Node 环境"></a>PS.另一种方式安装 Node 环境</h3><p>如果觉得不想要安装 brew，可以直接通过到官网下载 Node 的安装包。由于官网下载较慢，所以我保存了一份到 <a href="https://pan.baidu.com/s/1qXQmmmC" target="_blank" rel="external">百度云</a> 上，可以直接下载安装即可。</p>
+<blockquote>
+<p>如果觉得不想要安装 brew，可以直接通过到官网下载 Node 的安装包。由于官网下载较慢，所以我保存了一份到 <a href="https://pan.baidu.com/s/1qXQmmmC" target="_blank" rel="external">百度云</a> 上，可以直接下载安装即可。</p>
+</blockquote>
 <h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>安装 Hexo 环境比较简单，直接在终端执行一下命令即可：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
 <p>如果在写入文件的时候提示没有权限，则在命令前加上 <code>sudo</code>：</p>
@@ -604,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-HomeBrew"><span class="nav-number">1.</span> <span class="nav-text">安装 HomeBrew</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Node"><span class="nav-number">2.</span> <span class="nav-text">安装 Node</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS-另一种方式安装-Node-环境"><span class="nav-number"></span> <span class="nav-text">PS.另一种方式安装 Node 环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立博客站点"><span class="nav-number">2.</span> <span class="nav-text">建立博客站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预览博客"><span class="nav-number">3.</span> <span class="nav-text">预览博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署-github"><span class="nav-number">4.</span> <span class="nav-text">部署 github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#申请域名"><span class="nav-number">5.</span> <span class="nav-text">申请域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我用到的主题"><span class="nav-number">6.</span> <span class="nav-text">我用到的主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-HomeBrew"><span class="nav-number">1.</span> <span class="nav-text">安装 HomeBrew</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Node"><span class="nav-number">2.</span> <span class="nav-text">安装 Node</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立博客站点"><span class="nav-number">4.</span> <span class="nav-text">建立博客站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预览博客"><span class="nav-number">5.</span> <span class="nav-text">预览博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署-github"><span class="nav-number">6.</span> <span class="nav-text">部署 github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#申请域名"><span class="nav-number">7.</span> <span class="nav-text">申请域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我用到的主题"><span class="nav-number">8.</span> <span class="nav-text">我用到的主题</span></a></li></ol></div>
             
 
           </div>
