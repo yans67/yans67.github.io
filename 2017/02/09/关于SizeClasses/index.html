@@ -123,7 +123,7 @@ SizeC">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-86aad31d6ce9c1c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-d9b09173c7daf810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760370-e5def5b9e9e809d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-10T08:45:52.000Z">
+<meta property="og:updated_time" content="2017-02-14T17:13:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于SizeClasses">
 <meta name="twitter:description" content="SizeClasses简介Size Classes 为 iOS 8 的新特性，其特点就是将各个设备屏幕及其旋转后状态都抽象成屏幕 Size 的变化，而不再关心具体的尺寸。具体就是将屏幕的宽度抽象成Compact（紧凑型）、Any（任意）、Regular（常规）三种情况，高度也是如此，因此就有9种情况。简单的说，就是在一个 Storyboard 或者 xib 上，能够管理9种类型的视图。
@@ -367,9 +367,10 @@ SizeC">
         <h4 id="SizeClasses简介"><a href="#SizeClasses简介" class="headerlink" title="SizeClasses简介"></a><a id="2-SizeClasses简介"></a>SizeClasses简介</h4><p><code>Size Classes</code> 为 iOS 8 的新特性，其特点就是将各个设备屏幕及其旋转后状态都抽象成屏幕 Size 的变化，而不再关心具体的尺寸。具体就是将屏幕的宽度抽象成Compact（紧凑型）、Any（任意）、Regular（常规）三种情况，高度也是如此，因此就有9种情况。简单的说，就是在一个 Storyboard 或者 xib 上，能够管理9种类型的视图。</p>
 <h4 id="SizeClasses与AutoLayout"><a href="#SizeClasses与AutoLayout" class="headerlink" title="SizeClasses与AutoLayout"></a><a id="3-SizeClasses与AutoLayout"></a>SizeClasses与AutoLayout</h4><ol>
 <li>Size Classes 只是将视图分类，AutoLayout 才是对视图进行布局</li>
-<li>Size Classes 依赖于 AutoLayout。关闭 AutoLayout，则 Size Classes 无法开启。关闭Size Classes，对 AutoLayout 无影响。<a id="more"></a>
-<h4 id="SizeClasses与设备size"><a href="#SizeClasses与设备size" class="headerlink" title="SizeClasses与设备size"></a><a id="4-SizeClasses与设备size"></a>SizeClasses与设备size</h4><img src="http://upload-images.jianshu.io/upload_images/1760370-cab416cbff8e5ed6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1760370-46368711ec69918e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>Size Classes 依赖于 AutoLayout。关闭 AutoLayout，则 Size Classes 无法开启。关闭Size Classes，对 AutoLayout 无影响。</li>
 </ol>
+<a id="more"></a>
+<h4 id="SizeClasses与设备size"><a href="#SizeClasses与设备size" class="headerlink" title="SizeClasses与设备size"></a><a id="4-SizeClasses与设备size"></a>SizeClasses与设备size</h4><p><img src="http://upload-images.jianshu.io/upload_images/1760370-cab416cbff8e5ed6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1760370-46368711ec69918e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>如果没有特殊指定Size的类型，则默认是在 <code>wAny hAny</code> 模式下设置。其它8种类型继承于这个类型。</p>
 <ol>
 <li><p>在 storyboard 中添加一个 imageView，将imageView的图片设置如下。对图片设置好约束后，可以在 Xcode 右侧的属性选项中看到 <code>installed</code> ，默认表示为 <code>AA</code>。我们可以看到下面 Preview 内容在所有设备类型中都是显示这张图片。<br><img src="http://upload-images.jianshu.io/upload_images/1760370-6a3e2f2c2d57a3d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
