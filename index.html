@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/12/Hexo搭建自己的个人博客副本/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/12/JS中的原型和原型链/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Yans67">
@@ -292,7 +292,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/12/Hexo搭建自己的个人博客副本/" itemprop="url">
+                <a class="post-title-link" href="/2017/02/12/JS中的原型和原型链/" itemprop="url">
                   JS中的原型和原型链
                 </a>
               
@@ -346,8 +346,7 @@
 
       
         
-          
-            <h4 id="关于-JavaScript"><a href="#关于-JavaScript" class="headerlink" title="关于 JavaScript"></a>关于 JavaScript</h4><p>完整的 JavaScript 主要是由<code>ECMAScript</code>、<code>文档对象模型</code>、<code>浏览器对象模型</code>三个部分组成。</p>
+          <h4 id="关于-JavaScript"><a href="#关于-JavaScript" class="headerlink" title="关于 JavaScript"></a>关于 JavaScript</h4><p>完整的 JavaScript 主要是由<code>ECMAScript</code>、<code>文档对象模型</code>、<code>浏览器对象模型</code>三个部分组成。</p>
 <ul>
 <li>ECMAScript其实就是 js 的标准规范，或者说 js 是 ECMAScript 的扩展。<ul>
 <li>ECMA全称是<code>欧洲计算机制造商协会</code>，是一个国际标准化组织，主要制定了浏览器脚本语言      的标准（针对js），并将其成命名为 ECMAScript。</li>
@@ -362,61 +361,15 @@
 </li>
 <li>浏览器对象对象模型（BOM）：针对浏览器相关的属性和方法：<ul>
 <li>打开新窗口 window.open()</li>
-<li>所使用的 web 协议（http:// 或 <a href="https://）location.protocol" target="_blank" rel="external">https://）location.protocol</a></li>
-<li>浏览器平台 navigator.platform</li>
-</ul>
-</li>
-</ul>
-<h4 id="对象和原型"><a href="#对象和原型" class="headerlink" title="对象和原型"></a>对象和原型</h4><p>JavaScript 是一门面向对象的语言。</p>
-<blockquote>
-<p>殊不知，JavaScript的世界中的对象，追根溯源来自于一个 null。</p>
-</blockquote>
-<p>在 ECMAScript 5 中，创建对象，一般有三种方法：</p>
-<ol>
-<li>对象直接量：var point = {x:0 , y:0} ;</li>
-<li>new 和构造函数：var a = new Array() ;</li>
-<li>Object.create()：var o1 = Object.create({x:1 , y:2}) </li>
-</ol>
-<p>我们来了解一个与对象息息相关的一个概念，<code>原型</code>。</p>
-<p>绝大部分 JavaScript 对象（null 除外）都和另一个对象相关联，即<code>原型</code>，指向该原型对象的内部指针则是<strong>proto</strong>。每一个对象都从<code>原型</code>继承属性。</p>
-<ul>
-<li>通过<code>对象直接量</code>创建的对象都有同一个<code>原型对象</code>，可以通过 <code>__proto__</code> 获取原型对象。</li>
-<li>通过<code>new 和构造函数</code>创建的对象的原型就是构造函数的 prototype 属性的值，简单地说，通过 new Array()创建的对象的原型就是 Array.prototype。而 Array.prototype则是继承自 Object.prototype。</li>
-<li>通过<code>Object.create()</code>方法来创建对象，传入的参数为原型对象。</li>
-</ul>
-<blockquote>
-<p>没有原型的对象为数不多，Object.prototype 就是其中之一，它不继承任何属性，所有的内置构造函数都具有一个继承自 Object.prototype 的原型。</p>
-<p>去年6月，ECMAScript6发布，ECMAScript6 引入了一套新的关键字class可以实现类。</p>
-</blockquote>
-<p>现在我们来基于原型编写一个简单的类：</p>
-<p>我们先了解 new 的作用:</p>
-<ol>
-<li>new 的作用就是创建实例对象，然后调用构造方法。</li>
-<li>放在 new 后面的方法会被默认当做构造函数。</li>
-<li>然后创建一个新的实例对象，该对象则从函数的原型继承属性和方法。</li>
-<li>上下文（this）会指向这个新实例对象。</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	 <span class="function"><span class="keyword">function</span>  <span class="title">Human</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name ;</div><div class="line">    &#125;</div><div class="line">    Human.prototype = &#123;</div><div class="line">        <span class="attr">put</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"my name is "</span> + <span class="keyword">this</span>.name) ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>想要了解继承，我们得先知道<code>原型链</code>这个概念，顾名思义，<code>原型链</code>就是由原型对象组成的构成的一条链。</p>
-<p>假设要查询对象 o 的属性 x，如果 o 不存在 x，那么将会在 o 的原型对象 o1 中查询属性 x，如果 o1 也没有 x，则会在 o1 的原型对象 o2 查找，直到找到 x 或者找到一个原型是 null 的对象为止。可以看到，对象的原型属性就构成了一条原型链。通过这条链，我们就能实现继承。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = <span class="built_in">Object</span>.create(&#123;<span class="attr">x</span>:<span class="number">1</span> , <span class="attr">y</span>:<span class="number">2</span>&#125;) ;</div><div class="line">    <span class="keyword">var</span> b = <span class="built_in">Object</span>.create(a) ;</div><div class="line">    <span class="keyword">var</span> c = <span class="built_in">Object</span>.create(b) ;</div><div class="line">    <span class="built_in">console</span>.log(c.__proto__) ;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>打印输出为：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760370-f612f01f8e8cd397.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出原型链"></p>
-<h4 id="基于原型链的继承"><a href="#基于原型链的继承" class="headerlink" title="基于原型链的继承"></a>基于原型链的继承</h4><p>现在我们可以来简单地实现<code>基于原型链的继承</code>。</p>
-<ul>
-<li>实现 <code>继承属性</code>：</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">        <span class="keyword">var</span> a = &#123;</div><div class="line">            <span class="attr">x</span>:<span class="number">10</span>,</div><div class="line">            <span class="attr">y</span>:<span class="number">20</span></div><div class="line">        &#125; ;</div><div class="line">        <span class="keyword">var</span> b = <span class="built_in">Object</span>.create(a) ;</div><div class="line">        b.y = <span class="number">30</span> ;</div><div class="line">        b.z = <span class="number">40</span> ;</div><div class="line">        <span class="keyword">var</span> c = <span class="built_in">Object</span>.create(b) ;</div><div class="line">	</div><div class="line">        <span class="built_in">console</span>.log(c.x) ; <span class="comment">// 10</span></div><div class="line">        <span class="built_in">console</span>.log(c.y) ; <span class="comment">// 30</span></div><div class="line">        <span class="built_in">console</span>.log(c.z) ; <span class="comment">// 40</span></div><div class="line">	</div><div class="line">    &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li>实现 <code>继承方法</code>：</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">   a = <span class="number">1</span> ;</div><div class="line">    <span class="keyword">var</span> o = &#123;</div><div class="line">        <span class="attr">a</span> : <span class="number">2</span> ,</div><div class="line">        <span class="attr">m</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"><span class="comment">//        console.log(o.m()) ;</span></div><div class="line"><span class="comment">//        console.log(this.a) ;</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> p = <span class="built_in">Object</span>.create(o) ;</div><div class="line">    p.a = <span class="number">20</span> ;</div><div class="line">    <span class="built_in">console</span>.log(p.m()) ;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>参考资料</p>
-<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">ECMAScript 6 入门</a></p>
-<p><a href="http://huang-jerryc.com/2016/06/28/JavaScript%E5%8E%9F%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6%E6%80%9D%E6%83%B3/" target="_blank" rel="external">JavaScript原型中的哲学思想</a></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference" target="_blank" rel="external">MDNJavaScript 参考文档</a></p>
-
-          
+<li>所使用的 web 协议（http:// 或 <a href="https://）location.protocol">https://）location.protocol</a></li>
+<li>浏览器平台 navigator.platform
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/12/JS中的原型和原型链/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
