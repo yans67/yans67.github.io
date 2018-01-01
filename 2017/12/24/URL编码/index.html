@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Vue," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -99,31 +99,25 @@
 
 
 
-<meta name="description" content="关于 Vue-Routervue-router 简介通过改变 URL，在不重新请求页面的情况下，更新页面视图。更新视图但不重新请求页面。先来了解下 vue-router 是如何实现更新页面视图而不请求页面的。
-vue-router 中的 modemode 有hash、history、abstract 三种模式。默认为 hash 。
-
-hash 模式：  先来理解 url 中的 # 号的含义。
-
-当">
+<meta name="description" content="URL编码
+title: URL编码
+tags: 基础先了解字符的编码：
+ASCII 编码在计算机内部，所有信息最终都是二进制形式存在，一个二进制位（bit）有0和1两种状态，一个字节（byte）有八个二进制位，也就可以组合成256种状态。如果每种状态对应一个符号，则可以表示256个符号（00000000 ~ 11111111）。由美国制定的字符编码 ASCII 一共规定了128个编码， 每个字节">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 Vue-Router">
-<meta property="og:url" content="http://yoursite.com/2017/07/25/关于Vue-Router/index.html">
+<meta property="og:title" content="Yans67">
+<meta property="og:url" content="http://yoursite.com/2017/12/24/URL编码/index.html">
 <meta property="og:site_name" content="Yans67">
-<meta property="og:description" content="关于 Vue-Routervue-router 简介通过改变 URL，在不重新请求页面的情况下，更新页面视图。更新视图但不重新请求页面。先来了解下 vue-router 是如何实现更新页面视图而不请求页面的。
-vue-router 中的 modemode 有hash、history、abstract 三种模式。默认为 hash 。
-
-hash 模式：  先来理解 url 中的 # 号的含义。
-
-当">
-<meta property="og:updated_time" content="2017-07-25T06:08:05.000Z">
+<meta property="og:description" content="URL编码
+title: URL编码
+tags: 基础先了解字符的编码：
+ASCII 编码在计算机内部，所有信息最终都是二进制形式存在，一个二进制位（bit）有0和1两种状态，一个字节（byte）有八个二进制位，也就可以组合成256种状态。如果每种状态对应一个符号，则可以表示256个符号（00000000 ~ 11111111）。由美国制定的字符编码 ASCII 一共规定了128个编码， 每个字节">
+<meta property="og:updated_time" content="2018-01-01T08:19:21.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 Vue-Router">
-<meta name="twitter:description" content="关于 Vue-Routervue-router 简介通过改变 URL，在不重新请求页面的情况下，更新页面视图。更新视图但不重新请求页面。先来了解下 vue-router 是如何实现更新页面视图而不请求页面的。
-vue-router 中的 modemode 有hash、history、abstract 三种模式。默认为 hash 。
-
-hash 模式：  先来理解 url 中的 # 号的含义。
-
-当">
+<meta name="twitter:title" content="Yans67">
+<meta name="twitter:description" content="URL编码
+title: URL编码
+tags: 基础先了解字符的编码：
+ASCII 编码在计算机内部，所有信息最终都是二进制形式存在，一个二进制位（bit）有0和1两种状态，一个字节（byte）有八个二进制位，也就可以组合成256种状态。如果每种状态对应一个符号，则可以表示256个符号（00000000 ~ 11111111）。由美国制定的字符编码 ASCII 一共规定了128个编码， 每个字节">
 
 
 
@@ -151,13 +145,13 @@ hash 模式：  先来理解 url 中的 # 号的含义。
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/25/关于Vue-Router/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/24/URL编码/"/>
 
 
 
 
 
-  <title> 关于 Vue-Router | Yans67 </title>
+  <title>  | Yans67 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +278,7 @@ hash 模式：  先来理解 url 中的 # 号的含义。
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/关于Vue-Router/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/24/URL编码/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Yans67">
@@ -308,7 +302,7 @@ hash 模式：  先来理解 url 中的 # 号的含义。
             
             
               
-                关于 Vue-Router
+                
               
             
           </h1>
@@ -323,8 +317,8 @@ hash 模式：  先来理解 url 中的 # 号的含义。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00+08:00">
-                2017-07-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-24T14:36:46+08:00">
+                2017-12-24
               </time>
             
 
@@ -359,84 +353,52 @@ hash 模式：  先来理解 url 中的 # 号的含义。
       
 
       
-        <h2 id="关于-Vue-Router"><a href="#关于-Vue-Router" class="headerlink" title="关于 Vue-Router"></a>关于 Vue-Router</h2><h3 id="vue-router-简介"><a href="#vue-router-简介" class="headerlink" title="vue-router 简介"></a>vue-router 简介</h3><p>通过改变 URL，在不重新请求页面的情况下，更新页面视图。更新视图但不重新请求页面。<br>先来了解下 vue-router 是如何实现更新页面视图而不请求页面的。</p>
-<h3 id="vue-router-中的-mode"><a href="#vue-router-中的-mode" class="headerlink" title="vue-router 中的 mode"></a>vue-router 中的 mode</h3><p>mode 有hash、history、abstract 三种模式。默认为 hash 。</p>
-<ul>
-<li><p>hash 模式：<br>  先来理解 url 中的 # 号的含义。</p>
-<ol>
-<li>当浏览器读取 url 为 <a href="http://example.com/index.html#user" target="_blank" rel="external">http://example.com/index.html#user</a> 的时候，会自动将页面滚动到网页标识符为 user 的位置（锚点）。一般可以用 <a name="user"></a> ，或者使用id属性，比如 <div id="user"></div> 来设置锚点。</li>
-<li>#只是用来指导浏览器动作，跟 http 请求无关，因此改变 # 后面的内容，是不会发生重新请求资源，加载页面的。</li>
-<li>#符号本身以及它后面的字符称之为hash，用 window.location.hash 属性来获取。</li>
-<li>用window.addEventListener(“hashchange”, funcRef, false)、window.onhashchange = func 等方法来监听 hash 发生改变，每次改变会在访问历史中增加一个记录，利用这个特点就能实现更新视图但不重新请求页面。<blockquote>
-<p>通过例子理解 #hash 的使用：<br><a href="https://router.vuejs.org/zh-cn/api/options.html#base" target="_blank" rel="external">https://router.vuejs.org/zh-cn/api/options.html#base</a></p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>history 模式</p>
-<ol>
-<li><p>HTML5 history 模式是指 H5 为 history 提供的几个新的方法：</p>
-<ul>
-<li>history.pushState(data, title, [url]);</li>
-<li>history.replaceState(data, title, [url])</li>
-<li>history.state</li>
-<li>window.onpopstate<blockquote>
-<p>data:存储自定义数据的元素。title：页面标题。url：相对地址，如  index.html。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>显式调用 pushState() 方法，能够将 url 记录到浏览器历史记录栈中。</p>
-</li>
-<li>通过以上的方式，能够实现添加 url 到浏览器的历史记录中。<blockquote>
-<p>通过例子理解H5 history 的使用：<br><a href="http://www.zhangxinxu.com/study/201306/ajax-page-html5-history-api.html?area=pudong" target="_blank" rel="external">http://www.zhangxinxu.com/study/201306/ajax-page-html5-history-api.html?area=pudong</a></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li>abstract 模式<ol>
-<li>支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式。</li>
-<li>简单地理解成是用数组来模拟浏览器历史记录堆栈信息。</li>
-</ol>
-</li>
-</ul>
-<p>hash 跟 H5 history 的区别：<br>    hash 是在当前页面（DOM）改变其下的内容，只是在URL 上生成一个哈希来跟踪状态，而 H5 history 访问的是真实链接，需要后台正确配置。</p>
-<blockquote>
-<p>以上内容，如果想深入理解可以看下 vue-router 的源码：<br><a href="https://zhuanlan.zhihu.com/p/27588422" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/27588422</a><br><a href="https://juejin.im/post/58611353ac502e006739e188" target="_blank" rel="external">https://juejin.im/post/58611353ac502e006739e188</a></p>
-</blockquote>
-<h3 id="vue-router-简单使用"><a href="#vue-router-简单使用" class="headerlink" title="vue-router 简单使用"></a>vue-router 简单使用</h3><p>了解 vue-router 的实现原理后，我们来简单使用下 vue-router 。vue-router 的使用主要分为以下几个步骤:</p>
-<ol>
-<li>引入 vue-router 模块。</li>
-<li>创建 router 对象并配置相关路由和模式。</li>
-<li>在组件里面编写 router 的相关代码。</li>
-<li>Vue 对象挂载 router。</li>
-</ol>
-<h4 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h4><p>从查看页面元素可以知道，该组件最后会被渲染成带有链接的 a 标签，通过 to 属性指定链接地址。<br>被选中时会在便签中添加 class 属性值：<strong>.router-link-active</strong><br>router-link 还有很多属性，可以查看官网：</p>
-<blockquote>
-<p><a href="https://router.vuejs.org/zh-cn/api/router-link.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/api/router-link.html</a></p>
-</blockquote>
-<h4 id="router-view"><a href="#router-view" class="headerlink" title="router-view"></a>router-view</h4><p>该组件主要用来渲染匹配到的路由。</p>
-<p>配合 transition：可以给 router-view 设置 transition 过渡（<a href="http://hyuhan.com/2016/12/08/vue-transition/" target="_blank" rel="external">具体用法见Vue2.0 Transition常见用法全解惑</a>）。</p>
-<p>配合 <keep-alive> 使用：<keep-alive>可以缓存数据，这样就可以在渲染新的路由组件的时候，不清除上一个路有组件的数据。</keep-alive></keep-alive></p>
-<p>关于 router-view 的更多使用方式可以查看官网：</p>
-<blockquote>
-<p><a href="https://router.vuejs.org/zh-cn/api/router-view.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/api/router-view.html</a></p>
-</blockquote>
-<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
-<li><p><a href="https://segmentfault.com/a/1190000007825106" target="_blank" rel="external">Vue-router2.0学习笔记</a></p>
-</li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/27588422" target="_blank" rel="external">从vue-router看前端路由的两种实现</a></p>
-</li>
-<li><p><a href="https://juejin.im/post/58611353ac502e006739e188" target="_blank" rel="external">vue-router 源码分析-history</a></p>
-</li>
-<li><p><a href="http://www.zhangxinxu.com/wordpress/2013/06/html5-history-api-pushstate-replacestate-ajax/" target="_blank" rel="external">ajax与HTML5 history pushState/replaceState实例</a></p>
-</li>
-<li><p><a href="http://www.cnblogs.com/stephenykk/p/5057022.html" target="_blank" rel="external">html5 history api详解</a></p>
-</li>
-</ul>
+        <h1 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h1><hr>
+<p>title: URL编码</p>
+<h2 id="tags-基础"><a href="#tags-基础" class="headerlink" title="tags: 基础"></a>tags: 基础</h2><p>先了解字符的编码：</p>
+<h3 id="ASCII-编码"><a href="#ASCII-编码" class="headerlink" title="ASCII 编码"></a>ASCII 编码</h3><p>在计算机内部，所有信息最终都是二进制形式存在，一个二进制位（bit）有0和1两种状态，一个字节（byte）有八个二进制位，也就可以组合成256种状态。如果每种状态对应一个符号，则可以表示256个符号（00000000 ~ 11111111）。由美国制定的字符编码 ASCII 一共规定了128个编码， 每个字节的第一位统一为0，后面7位表示字符。如大写字母 A 是65，二进制表示为01000001。</p>
+<p>如果只是英文字符，用128个符号编码就够了。但是汉字能够多达 10w 个，很明显用 ASCII 这种一个字节的编码是不够用的，因此必须使用多个字节来表示一个符号，如简体中文常见的编码方式就是 GB2312，使用两个字节来表示一个汉字。理论上最多有256*256 = 65536个汉字。</p>
+<h3 id="Unicode-编码"><a href="#Unicode-编码" class="headerlink" title="Unicode 编码"></a>Unicode 编码</h3><p>一个符号集，记录了各个符号的二进制代码，不过没有明确规定这个二进制代码应该如何存储，比如，汉字<code>严</code> 的 Unicode 是十六进制<code>4E25</code>，转化成二进制为<code>100111000100101</code>，这个符号至少需要两个字节，而其他字符可能有三四个字节来表示，因此计算机是没法区分到底是三个字节表示一个符号，还是两个字节表示一个符号。</p>
+<h3 id="UTF-8-编码"><a href="#UTF-8-编码" class="headerlink" title="UTF-8 编码"></a>UTF-8 编码</h3><p>互联网使用最广的一种实现了 Unicode 编码的字符集。一种变长的编码方式，使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。其规则如下图所示：</p>
+<table>
+<thead>
+<tr>
+<th>Unicode符号范围</th>
+<th>UTF-8编码方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(十六进制)</td>
+<td>(二进制）</td>
+</tr>
+<tr>
+<td>0000 0000-0000 007F</td>
+<td>0xxxxxxx</td>
+</tr>
+<tr>
+<td>0000 0080-0000 07FF</td>
+<td>110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0000 0800-0000 FFFF</td>
+<td>1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0001 0000-0010 FFFF</td>
+<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody>
+</table>
+<p>由上图可以发现，UTF-8的编码规则主要有两条：</p>
+<pre><code>1. 对于单字节符号，第一位设置为0，后面7位为这个符号的 Unicode 码。因此对于英文字符。UTF-8编码和 ASCII 码是相同的。
+2. 对于 n 个字节的符号（n&gt;1），第一个字节的前 n 为统一设置为1，第 n+1位设置为0，后面字节的前两位一律设置为10，剩下的就是这个符号的 Unicode码，因此一个字符的 Unicode 码跟其 UTF-8 码是不一样的。
+</code></pre><p>了解字符编码后，我们来看下 URL 编码的作用。<br>客户端获取服务器资源，需要通过 URL 定位到相应的资源，而 URL 只能使用英文字母、阿拉伯数字和某些标点符号，因此当 URL 包含中文或者其他符号的时候，就需要对对 URL 进行编码，可是由于各个浏览器厂商的所使用的编码的不一致，因此就造成 URL 编码变得有点复杂混乱。</p>
+<p>为了避免上述情况，我们是用 JavaScript 对 URL 编码，然后再向服务器提交，这样浏览器就不会帮我们编码了。因为 JavaScript 的输出总是一致，所以就保证服务器所得到的数据是格式统一的。</p>
+<p>经过 JavaScript 编码都变成了 Unicode 字符。</p>
+<p>JavaScript 用于编码的函数主要有一下：</p>
+<h3 id="encodeURI"><a href="#encodeURI" class="headerlink" title="encodeURI()"></a>encodeURI()</h3><p>对<code>整个 URL</code>进行编码，除了常见的符号，对 <code>; / ? : @ &amp; = + $ , # &#39;</code> 也不进行编码。编码规则为：编码后输出符号为 utf-8形式，并且每个字节前加上%。其对应的解码函数是decodeURI()。</p>
+<h3 id="encodeURIComponent"><a href="#encodeURIComponent" class="headerlink" title="encodeURIComponent()"></a>encodeURIComponent()</h3><p>对 URL 的组成部分进行个别编码，并且，会对  <code>; / ? : @ &amp; = + $ , # &#39;</code>  也进行编码，具体的编码规则跟<code>encodeURI()</code> 一样。其对应的解码函数是decodeURIComponent()。</p>
 
       
     </div>
@@ -458,12 +420,6 @@ hash 模式：  先来理解 url 中的 # 号的含义。
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
-          
-        </div>
-      
 
       
         
@@ -473,8 +429,8 @@ hash 模式：  先来理解 url 中的 # 号的含义。
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/21/Weex项目构建流程/" rel="next" title="Weex项目构建流程">
-                <i class="fa fa-chevron-left"></i> Weex项目构建流程
+              <a href="/2017/11/20/Mybatis笔记/" rel="next" title="Mybatis 笔记">
+                <i class="fa fa-chevron-left"></i> Mybatis 笔记
               </a>
             
           </div>
@@ -482,10 +438,6 @@ hash 模式：  先来理解 url 中的 # 号的含义。
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/19/Spring笔记/" rel="prev" title="Spring 笔记">
-                Spring 笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -621,7 +573,7 @@ hash 模式：  先来理解 url 中的 # 号的含义。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-Vue-Router"><span class="nav-number">1.</span> <span class="nav-text">关于 Vue-Router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router-简介"><span class="nav-number">1.1.</span> <span class="nav-text">vue-router 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router-中的-mode"><span class="nav-number">1.2.</span> <span class="nav-text">vue-router 中的 mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router-简单使用"><span class="nav-number">1.3.</span> <span class="nav-text">vue-router 简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#router-link"><span class="nav-number">1.3.1.</span> <span class="nav-text">router-link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#router-view"><span class="nav-number">1.3.2.</span> <span class="nav-text">router-view</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关资料"><span class="nav-number">1.4.</span> <span class="nav-text">相关资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#URL编码"><span class="nav-number">1.</span> <span class="nav-text">URL编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-基础"><span class="nav-number">1.1.</span> <span class="nav-text">tags: 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII-编码"><span class="nav-number">1.1.1.</span> <span class="nav-text">ASCII 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-编码"><span class="nav-number">1.1.2.</span> <span class="nav-text">Unicode 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UTF-8-编码"><span class="nav-number">1.1.3.</span> <span class="nav-text">UTF-8 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#encodeURI"><span class="nav-number">1.1.4.</span> <span class="nav-text">encodeURI()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#encodeURIComponent"><span class="nav-number">1.1.5.</span> <span class="nav-text">encodeURIComponent()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
